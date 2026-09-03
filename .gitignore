@@ -1,0 +1,10 @@
+# 每台设备的本地状态
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+
+# 系统与临时文件
+Thumbs.db
+desktop.ini
+*.tmp
+*.swp
