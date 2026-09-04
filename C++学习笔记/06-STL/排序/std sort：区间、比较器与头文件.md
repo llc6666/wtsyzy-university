@@ -26,6 +26,10 @@ std::sort(first, last, compare);
 
 排序区间是左闭右开：`[first, last)`，`last` 不参与排序。
 
+## 机制
+
+`std::sort(first, last, comp)` 只重排半开区间 `[first, last)`；比较器 `comp(a, b)` 返回真表示 `a` 应排在 `b` 前。比较器必须保持严格弱序，不能用 `<=` 替代 `<`。
+
 ## 示例
 
 ```cpp
@@ -78,6 +82,10 @@ std::sort(a.begin(), a.end());
 ## 版本边界
 
 `std::sort` 在旧标准中就存在。C++11 的 lambda 需要较新的语言标准；旧版编译器使用普通比较函数。
+
+## 如何验证
+
+对 `{3, 1, 2}` 调用默认 `std::sort`，输出应为 `1 2 3`；把比较器改为 `std::greater<int>()` 后应为 `3 2 1`。再只排序 `[begin() + 1, end())`，检查第一个元素保持不动，这能验证右端迭代器是开区间。
 
 ## 关联
 

@@ -236,6 +236,10 @@ std::queue<int> q(data);
 
 `q`是一个新的 `queue`对象，默认构造形式会复制 `data`中的元素。之后对 `q`调用 `push`或`pop`，不会同步修改原来的 `data`。
 
+## 如何验证
+
+用 `deque<int>{1, 2, 3}` 初始化 `queue<int>` 后，检查 `size()` 为 3、`front()` 为 1、`back()` 为 3。再执行一次 `pop()`，前端应变为 2。尝试 `queue<int> q(3)` 或 `q{1, 2, 3}`，应观察到编译失败，不能把 queue 当作 vector 初始化。
+
 ## 使用规则
 
 1. `std::queue<T> q;`表示创建存放 `T`的空队列。
