@@ -28,6 +28,7 @@ tags: [电子, 嵌入式, STM32, 实验]
 2. 第一次使用一块板子时，执行[STM32 最小实验：从资料核对到串口回显](STM32%20最小实验：从资料核对到串口回显.md)。
 3. 每次实验按[硬件实验记录与故障定位](硬件实验记录与故障定位.md)留下记录，不凭印象下结论。
 4. 项目开始出现多个板卡、固件或成员协作时，执行[嵌入式项目的版本对应与发布检查](嵌入式项目的版本对应与发布检查.md)。
+5. 进入 ADC、PWM、I2C 或信号处理时，先阅读对应主题页，再按实验记录模板保存原始证据。
 
 ## 交付物
 
@@ -49,5 +50,7 @@ tags: [电子, 嵌入式, STM32, 实验]
 
 - [STM32CubeMX 文档](https://dev.st.com/stm32cube-docs/stm32cubemx/6.18.0/en/index.html)：引脚、时钟、外设配置与代码生成。
 - [STM32CubeProgrammer 入门文档](https://dev.st.com/stm32cube-docs/prog/2.23.0/en/docs/markup/CubeProg_How_To_Start/CubeProg_HowToStart_toc.html)：烧录、校验和连接接口。
+- [STM32 ADC 官方入门资料](https://wiki.st.com/stm32mcu/wiki/Getting_started_with_ADC)：ADC 与 DMA 的配置示例。
+- [CMSIS-DSP 实数 FFT 文档](https://arm-software.github.io/CMSIS-DSP/latest/group__RealFFT.html)：RFFT 初始化、处理与输出约束。
 - [Git 基础：创建仓库](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)：初始化、追踪和首次提交。
 - [公开知识库的脱敏与发布检查](../方法论/公开发布/公开知识库的脱敏与发布检查.md)。
