@@ -1,0 +1,16 @@
+id,类别,名称,本地状态,本地目录或取用方式,原始来源,许可证或条款,可用于PPT的范围,必须注意
+ICON-001,图标,Lucide Static,按项目从官方来源获取,公开版不随包提供,https://github.com/lucide-icons/lucide,ISC 及少量 Feather 派生图标的 MIT,课程和个人项目；可改色和缩放,保留包内 LICENSE；不要把图标当品牌 Logo
+ICON-002,图标,Bootstrap Icons,按项目从官方来源获取,公开版不随包提供,https://github.com/twbs/icons,MIT,课程和个人项目；适合实心信息图标,保留包内 LICENSE
+ICON-003,图标,Heroicons,按项目从官方来源获取,公开版不随包提供,https://github.com/tailwindlabs/heroicons,MIT,课程和个人项目；适合简洁线性或实心图标,保留包内 LICENSE
+ICON-004,品牌标识,Simple Icons,在线候选,公开版不随包提供,https://simpleicons.org/,CC0 图形但品牌商标权另行存在,仅在确有品牌指代需要时使用,不得把开源图形许可误解为品牌授权
+ILL-001,表情,OpenMoji,按项目从官方来源获取,公开版不随包提供,https://github.com/hfg-gmuend/openmoji,CC BY-SA 4.0,可用于需要明确署名的课程课件,每次使用都署名并标明修改；公开分发改编版前复核相同方式共享义务
+ILL-002,插画,Open Doodles,在线候选,40-在线来源/插画与照片.md,https://www.opendoodles.com/,CC0,可下载单项用于课程和个人项目,优先记录具体素材页面和下载日期
+ILL-003,插画,Open Peeps,在线候选,40-在线来源/插画与照片.md,https://www.openpeeps.com/,CC0,可制作人物组合与场景,优先保留原始下载包和素材 URL
+ILL-004,插画,unDraw,在线按需取用,40-在线来源/插画与照片.md,https://undraw.co/,unDraw License,可单项用于课程课件且通常无需署名,禁止批量抓取、打包再分发、训练 AI 或复制其服务
+PHOTO-001,照片,Unsplash,在线按需取用,40-在线来源/插画与照片.md,https://unsplash.com/,Unsplash License,可单项用于课件,不能批量汇编成替代素材库；人物、商标、艺术品有独立权利风险；建议署名
+PHOTO-002,照片与视频,Pexels,在线按需取用,40-在线来源/插画与照片.md,https://www.pexels.com/,Pexels License,可单项用于课件和导出视频,不得再销售或再分发；人物、商标和作品另行审查
+FONT-001,中文字体,Noto Sans SC Variable,在线按项目取用,公开版仅保留许可证与官方下载入口,https://github.com/google/fonts/tree/main/ofl/notosanssc,SIL Open Font License 1.1,中文正文与标题；可嵌入或随项目提供,安装到系统前先确认展示电脑也有该字体；交付 PDF 规避替换
+FONT-002,中文字体,Source Han Sans,在线候选,40-在线来源/字体.md,https://github.com/adobe-fonts/source-han-sans,SIL Open Font License 1.1,需要多字重时按项目下载,文件较大；正式交付仍应同时输出 PDF
+TMPL-001,模板,Microsoft Create,在线按需取用,40-在线来源/模板与图表.md,https://create.microsoft.com/,Microsoft 服务条款与单项说明,可作为 PowerPoint 起稿来源,不混入无来源的二手模板站
+TMPL-002,模板,SlidesCarnival,在线候选,40-在线来源/模板与图表.md,https://www.slidescarnival.com/,以页面当前条款为准,可先筛选适合学术汇报的结构,下载前逐份核对条款和署名要求
+DATA-001,地图,Natural Earth,在线按需取用,40-在线来源/模板与图表.md,https://www.naturalearthdata.com/,Public Domain,地理、区域对比和路线示意,事实数据另列来源；地图只负责空间表达
