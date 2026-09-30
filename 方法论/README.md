@@ -1,7 +1,7 @@
 ---
 title: 方法论
 status: public
-updated: 2026-09-24
+updated: 2026-09-30
 tags: [方法论, 知识管理, 决策, 项目]
 ---
 
