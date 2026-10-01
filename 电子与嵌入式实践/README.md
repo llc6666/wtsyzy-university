@@ -33,6 +33,7 @@ tags: [电子, 嵌入式, STM32, 实验]
 
 ## STM32 专题入口
 
+- [C 语言与 STM32 编程练习库](C语言与STM32简化实例/README.md)：12 个 C 知识主题、6 个嵌入式专题和 PC 可运行小程序
 - [CubeMX 工程生成：配置、USER CODE 与复核](STM32CubeMX工程生成：配置、USER%20CODE%20与复核.md)
 - [最小系统：上电、复位、时钟与下载核对](STM32最小系统：上电、复位、时钟与下载核对.md)
 - [串口调试：UART 回显、printf 重定向与日志边界](STM32串口调试：UART回显、printf重定向与日志边界.md)

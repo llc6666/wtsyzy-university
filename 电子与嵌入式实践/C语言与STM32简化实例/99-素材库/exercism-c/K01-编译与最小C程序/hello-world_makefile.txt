@@ -1,0 +1,40 @@
+### 示例 makefile（注释已译为中文，变量名与规则保持原样）
+### 来源：exercism/c 仓库 exercises/practice/hello-world/makefile（MIT 许可）
+### 说明：这是 exercism 每道题自带的构建脚本，用来跑测试与内存检查。
+###       本库不收录测试框架，所以这个文件主要用来看「一套严格的编译开关长什么样」。
+
+### 如果要用额外的库（比如 math.h），把链接参数写在这里（本例是 -lm）
+LIBS = -lm
+
+###
+CFLAGS  = -std=c99                        # 指定语言标准
+CFLAGS += -g                              # 带调试信息
+CFLAGS += -Wall                           # 打开主要警告
+CFLAGS += -Wextra                         # 打开更多警告
+CFLAGS += -pedantic                       # 严格按标准检查，挡住编译器扩展
+CFLAGS += -Werror                         # 警告即错误：逼自己清干净
+CFLAGS += -Wmissing-declarations          # 函数缺声明就报
+CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR   # 给测试框架用的宏
+
+ASANFLAGS  = -fsanitize=address           # 地址 sanitizer：抓越界与释放后使用
+ASANFLAGS += -fno-common
+ASANFLAGS += -fno-omit-frame-pointer
+
+.PHONY: test
+test: tests.out                           # 先编译出测试程序，再运行
+	@./tests.out
+
+.PHONY: memcheck
+memcheck: ./*.c ./*.h                     # 用 ASAN 再跑一遍，检查内存问题
+	@echo Compiling $@
+	@$(CC) $(ASANFLAGS) $(CFLAGS) test-framework/unity.c ./*.c -o memcheck.out $(LIBS)
+	@./memcheck.out
+	@echo "Memory check passed"
+
+.PHONY: clean
+clean:
+	rm -rf *.o *.out *.out.dSYM
+
+tests.out: ./*.c ./*.h
+	@echo Compiling $@
+	@$(CC) $(CFLAGS) test-framework/unity.c ./*.c -o tests.out $(LIBS)
