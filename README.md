@@ -162,7 +162,13 @@ git -C 'D:\wtsyzy-university-md' ls-remote origin refs/heads/main
 - 新增 `电子与嵌入式实践/嵌入式工程排障：区分工程树、搜索路径与硬件证据.md`，把工程树、Include Paths、VS Code IntelliSense、Target 成员、链接输入、下载产物和硬件现象分层。
 - 来源为 C++ 学习和 STM32 工程排障笔记；删除竞赛名称、个人讲解记录、私有路径、工程名称、板卡细节、项目结果和构建产物。重复的 OLED 方法、STL 速查、PWM 配置阻塞记录、题面、学习安排与竞赛复盘不公开。
 - 已回读 cppreference、Keil 和 VS Code 官方文档；C++17 示例以 `-O2 -Wall -Wextra -Wpedantic -Werror` 编译通过，样例输出 `4 4 5 9 9`，随机对拍与定向边界自测通过。全库 283 篇 Markdown，760 条本地链接断链 0；本轮 8 个变更文件的严格 UTF-8、敏感信息、私有路径、范围和 `git diff --check` 审计通过。
-- 状态：内容已通过公开范围审计；内容提交为 `ab7d364`，待使用 PowerShell + Git CLI 推送并用远端哈希回读确认。只记录学习相关内容。
+- 状态：内容已通过公开范围审计；内容提交为 `ab7d364`，日志状态提交为 `58225e7`，失败记录提交为 `127dae3`。三次推送均在 GitHub HTTPS 443 连接阶段失败，远端回读退出码 128，未确认发布；本地 `main` 比跟踪引用超前 3 个提交，工作区干净。只记录学习相关内容。
+- 用户处理：网络恢复后，在 PowerShell + Git CLI 中执行：
+
+```powershell
+git -C 'D:\wtsyzy-university-md' push origin main
+git -C 'D:\wtsyzy-university-md' ls-remote origin refs/heads/main
+```
 
 ### 2026-10-03
 
