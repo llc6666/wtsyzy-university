@@ -474,7 +474,7 @@ git -C 'D:\wtsyzy-university-md' ls-remote origin refs/heads/main
 - 来源为个人 C++ 自然数拆分练习及排错记录；删除题面、个人学习状态、私有路径、源码落点、探针输出、编译环境和对拍脚本，不复制第三方题面或源码。
 - 同步 C++ 专题入口、知识地图、首页重大更新和独立日志；PPT 案例拆解因与现有 PPTmaker 规范重复且缺少独立授权记录，本轮不纳入。
 - 整理与发布检查：检查本次改动文件范围、敏感信息、个人路径、官方链接、Markdown 链接和日志同步；本轮未编译、未运行、未对拍、未新增测试文件。
-- 状态：内容提交 `eb68a3bc777f1907fb1202745631f7fb4f8a34f1` 与日志同步提交 `8fc764529acfca3e63586879bf16ab59714da8e0` 已由 PowerShell + Git CLI 推送至 `origin/main`。
+- 状态：内容提交 `eb68a3bc777f1907fb1202745631f7fb4f8a34f1` 与日志同步提交 `8fc764529acfca3e63586879bf16ab59714da8e0` 已推送；最终发布状态补记提交 `d92a92d70c822245ee8ab75fd0de25d5eb19c525` 已在本地生成，补推阶段使用 PowerShell + Git CLI 连接 GitHub HTTPS 443 失败，远端当前未确认该提交。
 
 ### 每次提交前的固定记录字段
 
