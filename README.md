@@ -483,7 +483,7 @@ git -C 'D:\wtsyzy-university-md' ls-remote origin refs/heads/main
 - 更新 `方法论/知识库构建/本地知识库检索：从文件清单到可复核结果.md`，新增迁移、改名、稳定 ID、重定向预览、跨库链接解析、只读展示和批量改写门禁。
 - 把内部检索治理材料改写为通用学习方法；删除本机绝对路径、内部库名、脚本、模型信息、索引规模、备份路径、测试数字和关系记录，不复制私有知识库。
 - 同步方法论目录、知识地图、首页重大更新和独立更新日志；本轮未编译、未运行、未执行样例、未做技术验证，仅完成必要的公开边界、链接和格式检查。
-- 状态：内容提交 `3ed1513b3b2d56eaf5d62e0059a3868d7007c7c9` 已在本地生成。推送阶段使用 PowerShell + Git CLI 执行 `git push origin main`，连接 `github.com:443` 失败；随后执行 `git ls-remote origin refs/heads/main` 也失败，远端未确认收到本次提交。
+- 状态：内容提交 `3ed1513b3b2d56eaf5d62e0059a3868d7007c7c9` 和失败补记提交 `03039e3` 已在本地生成。首次推送和补记日志后的重试均使用 PowerShell + Git CLI，在连接 `github.com:443` 时失败；两次推送之间执行的 `git ls-remote origin refs/heads/main` 也因同一原因失败，远端未确认收到本次提交。
 - 用户处理：网络恢复后，在 PowerShell + Git CLI 中执行：
 
 ```powershell
