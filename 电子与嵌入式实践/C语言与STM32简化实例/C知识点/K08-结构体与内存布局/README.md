@@ -6,7 +6,8 @@ tags:
   - alignment
   - embedded
 created: 2026-10-01
-status: PC 实例已编译运行
+updated: 2026-11-10
+status: source_runtime_record__not_repeated
 ---
 
 # K08 结构体、对齐与内存布局
@@ -58,19 +59,69 @@ status: PC 实例已编译运行
 
 结构体能整体赋值、能作为返回值，这是它比数组方便的地方；代价是拷贝开销，大结构体要传指针。
 
-## 素材（随库携带，搬走后仍可用）
+## 初始化、赋值与传参
 
-| 素材 | 位置 |
-| --- | --- |
-| `complex-numbers` 题面 / 参考解 | [题面](../../99-素材库/exercism-c/K08-结构体与内存布局/complex-numbers_题面.md) · [参考解](../../99-素材库/exercism-c/K08-结构体与内存布局/complex-numbers_参考解.c) |
-| `clock` 题面 / 参考解 | [题面](../../99-素材库/exercism-c/K08-结构体与内存布局/clock_题面.md) · [参考解](../../99-素材库/exercism-c/K08-结构体与内存布局/clock_参考解.c) |
-| CrashCourse《结构&联合&枚举》 | [17-结构&联合&枚举.md](../../99-素材库/hairrrrr-C-CrashCourse/K08-结构体与内存布局/17-结构&联合&枚举.md) |
+~~~c
+struct Box {
+    int x;
+    int y;
+};
 
-选做：`rational-numbers`
+struct Box a = {1, 2};
+struct Box b = {0};
+b = a;
+~~~
 
-## 写什么
+使用结构体时按以下顺序处理：
 
-`complex-numbers`、`clock`。验收标准见 [写-练习记录.md](写-练习记录.md)
+1. 定义变量时明确初始化；局部结构体不要在未初始化状态下读取成员。
+2. 成员较多时使用指定初始化器或专门的初始化函数，避免顺序填错。
+3. 整体赋值会复制结构体对象，包括其中的数组成员；裸数组自身不能用整体赋值。
+4. 按值传参会复制一份对象；大对象或需要修改调用者对象时，传结构体指针，并写清楚是否允许为空。
+5. 返回结构体的值与返回局部结构体地址是两回事；后者会形成悬空指针。
+
+## 嵌套与自引用
+
+结构体可以包含另一个结构体，也可以包含指向自身的指针：
+
+~~~c
+struct Point {
+    int x;
+    int y;
+};
+
+struct Box {
+    struct Point pos;
+    int width;
+};
+
+struct Node {
+    int value;
+    struct Node *next;
+};
+~~~
+
+自引用必须使用指针。若把 struct Node next 直接作为成员，编译器无法确定 Node 的最终大小。链表、树和环形缓冲区都依赖这种“对象保存下一对象地址”的布局；使用时仍要单独写明所有权、终止条件和生命周期。
+
+## 复习与自查卡
+
+遇到一段结构体代码，先填写以下六项：
+
+1. 成员列表、成员类型和初始化方式。
+2. 每个成员的访问形式，是点号还是结构体指针箭头。
+3. sizeof 与 offsetof 的结果来源，是否依赖特定 ABI。
+4. 传参时是复制对象还是传递地址，修改责任归谁。
+5. 如果用于协议或寄存器，字节序、访问宽度、保留位和成员偏移来自哪份资料。
+6. 来源记录、源码阅读、工程构建和硬件现象分别处于哪一层，不能把它们合并成一个结论。
+
+本页原有 PC 示例输出只作为来源记录；本轮只整理概念，未重新编译、运行或复核来源输出。
+
+## 官方参考
+
+本页不复制第三方题面、参考解或课程转录。需要练习时，按公开来源登记和许可条件重新获取材料，并把练习记录与知识结论分开。
+
+- C 语言语义可参考 [N1570 C11 草案](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)。
+- STM32F1 寄存器布局可参考 [ST RM0008](https://www.st.com/resource/en/reference_manual/cd00171190-stm32f101-103-105-107-stm32f100-series-armbased-32bit-mcus-stmicroelectronics.pdf)。
 
 ## 嵌入式落点
 
@@ -89,3 +140,5 @@ status: PC 实例已编译运行
 - 上一个：[K07 指针与地址](../K07-指针与地址/README.md)
 - 下一个：[K09 动态内存与所有权](../K09-动态内存与所有权/README.md)
 - 来源：exercism/c（MIT）· hairrrrr/C-CrashCourse（本地未发现 LICENSE，本批按特批入库，许可状态不变）
+- C 语言语义可参考 [N1570 C11 草案](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)；STM32F1 寄存器布局可参考 [ST RM0008](https://www.st.com/resource/en/reference_manual/cd00171190-stm32f101-103-105-107-stm32f100-series-armbased-32bit-mcus-stmicroelectronics.pdf)。
+- 本轮未编译、未运行、未执行样例或硬件实验。
