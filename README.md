@@ -626,7 +626,7 @@ git -C 'D:\wtsyzy-university-md' ls-remote origin refs/heads/main
 - 新增 C++学习笔记/02-函数与对象/class 与 struct：封装、生命周期与 C 的模拟.md，把 class/struct、访问控制、构造析构、RAII、继承与虚函数的实现边界，以及 C 的结构体加函数指针写成通用学习页。
 - 删除个人工程、组织语境、私有路径、原始题面、第三方题解和不必要的来源索引；保留 C11、C++ 工作草案和 ST RM0008 等必要公开参考链接。
 - 来源中的 PC 示例结果只标为来源记录，不写成本轮验证；本轮只完成候选阅读、去重、脱敏、版权与链接范围、Markdown 格式检查，未编译、未运行、未执行样例、未做性能测试或硬件实验。
-- 状态：待提交。
+- 状态：内容提交 51c0e9272c53e786b43aaa4adeed818ff7d867ad 已通过 PowerShell + Git CLI 推送到 origin/main；git ls-remote 回读同一哈希。
 
 ### 每次提交前的固定记录字段
 
